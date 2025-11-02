@@ -1,0 +1,42 @@
+import Image from 'next/image'
+
+export default function Icon() {
+  return (
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style={{stopColor:'#f97316', stopOpacity:1}} />
+          <stop offset="100%" style={{stopColor:'#ea580c', stopOpacity:1}} />
+        </linearGradient>
+      </defs>
+      
+      {/* Anvil base */}
+      <path d="M 40 130 Q 30 140 30 150 L 170 150 Q 170 140 160 130 L 120 110 L 80 110 Z" 
+            fill="#2c2419" stroke="#d97706" strokeWidth="2"/>
+      
+      {/* Anvil top */}
+      <path d="M 50 120 Q 50 100 60 90 L 140 90 Q 150 100 150 120" 
+            fill="#1f1612" stroke="#d97706" strokeWidth="2"/>
+      
+      {/* Flames */}
+      <path d="M 40 100 Q 35 70 50 60 Q 60 45 70 65 Q 75 55 80 70" 
+            fill="#f97316" opacity="0.9"/>
+      <path d="M 45 100 Q 40 75 55 65 Q 62 55 70 70 Q 72 65 75 75" 
+            fill="#ea580c" opacity="0.8"/>
+      
+      {/* Quill pen */}
+      <ellipse cx="130" cy="85" rx="8" ry="25" fill="#7c3aed" opacity="0.7"/>
+      <path d="M 135 85 L 150 70" stroke="#6366f1" strokeWidth="3" strokeLinecap="round"/>
+      <path d="M 138 88 L 148 80" stroke="#6366f1" strokeWidth="1"/>
+      
+      {/* Hammer */}
+      <circle cx="100" cy="60" r="8" fill="#fbbf24"/>
+      <path d="M 100 70 L 110 100 L 108 102 L 98 102 L 96 100 Z" 
+            fill="#d97706" stroke="#f97316" strokeWidth="1"/>
+      
+      {/* Highlight */}
+      <path d="M 60 100 Q 65 90 70 95 Q 75 90 80 100" 
+            fill="#fbbf24" opacity="0.3"/>
+    </svg>
+  )
+}

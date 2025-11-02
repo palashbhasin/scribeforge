@@ -1,0 +1,12 @@
+language = "nodejs"
+run = "npm run replit"
+
+[nix]
+channel = "stable-22_11"
+
+[deploy]
+run = ["sh", "-c", "npm run build && npm start"]
+
+[env]
+NODE_ENV = "production"
+PORT = "3000"

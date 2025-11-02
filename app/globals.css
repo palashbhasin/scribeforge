@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, #1f1612, #2d2119);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Subtle flame flicker */
+  @keyframes sf-flicker {
+    0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 4px rgba(249,115,22,0.5)); }
+    50% { opacity: 0.7; filter: drop-shadow(0 0 8px rgba(249,115,22,0.7)); }
+  }
+  .animate-sf-flicker { animation: sf-flicker 1.6s ease-in-out infinite; }
+
+  /* Gentle float */
+  @keyframes sf-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+  }
+  .animate-sf-float { animation: sf-float 3s ease-in-out infinite; }
+
+  /* Slide in from right (for sidebars) */
+  @keyframes sf-slide-in-right {
+    from { transform: translateX(24px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  .animate-sf-slide-in-right { animation: sf-slide-in-right 220ms ease-out both; }
+
+  /* Hammer crafting animation - smashing on book */
+  @keyframes sf-hammer-smash {
+    0% { transform: translateY(0) rotate(-8deg); }
+    45% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(12px) rotate(5deg); }
+    55% { transform: translateY(0) rotate(-8deg); }
+    100% { transform: translateY(0) rotate(-8deg); }
+  }
+  .animate-sf-hammer-smash { animation: sf-hammer-smash 1.2s ease-in-out infinite; }
+  
+  @keyframes sf-hammer-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+  }
+  .animate-sf-hammer-bounce { animation: sf-hammer-bounce 1.2s ease-in-out infinite 0.1s; }
+  
+  @keyframes sf-quill-float {
+    0%, 100% { transform: translateX(0) translateY(0) rotate(-2deg); }
+    33% { transform: translateX(1px) translateY(-1px) rotate(0deg); }
+    66% { transform: translateX(-1px) translateY(-1px) rotate(-1deg); }
+  }
+  .animate-sf-quill-float { animation: sf-quill-float 3s ease-in-out infinite; }
+  
+  @keyframes sf-book-compress {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.92); }
+  }
+  .animate-sf-book-compress { animation: sf-book-compress 1.2s ease-in-out infinite 0.05s; }
+  
+  /* Simple loading spinner */
+  @keyframes sf-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .animate-sf-spin { animation: sf-spin 1s linear infinite; }
+  
+  /* Loading pulse */
+  @keyframes sf-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .animate-sf-pulse { animation: sf-pulse 1.5s ease-in-out infinite; }
+}
